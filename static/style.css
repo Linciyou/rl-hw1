@@ -1,0 +1,276 @@
+/* ===== Reset & Base ===== */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Segoe UI', 'Noto Sans TC', sans-serif;
+    background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
+    color: #e0e0e0;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    padding: 40px 20px;
+}
+
+.container {
+    max-width: 960px;
+    width: 100%;
+}
+
+h1 {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 30px;
+    background: linear-gradient(90deg, #00d2ff, #3a7bd5);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+h2 {
+    text-align: center;
+    font-size: 1.3rem;
+    margin-bottom: 16px;
+    color: #b0bec5;
+}
+
+h3 {
+    text-align: center;
+    font-size: 1.1rem;
+    margin-bottom: 12px;
+    color: #90caf9;
+}
+
+/* ===== Control Panel ===== */
+.control-panel {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.06);
+    border-radius: 14px;
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.control-panel label {
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+.control-panel input[type="number"] {
+    width: 70px;
+    padding: 8px 12px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.08);
+    color: #fff;
+    font-size: 1rem;
+    text-align: center;
+    outline: none;
+    transition: border-color 0.3s;
+}
+
+.control-panel input[type="number"]:focus {
+    border-color: #3a7bd5;
+}
+
+.control-panel button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 10px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: transform 0.15s, box-shadow 0.3s;
+}
+
+#btnGenerate {
+    background: linear-gradient(135deg, #3a7bd5, #00d2ff);
+    color: #fff;
+}
+
+#btnReset {
+    background: rgba(255, 255, 255, 0.1);
+    color: #e0e0e0;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.control-panel button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0, 210, 255, 0.25);
+}
+
+/* ===== Instructions ===== */
+.instructions {
+    text-align: center;
+    padding: 14px 20px;
+    margin-bottom: 24px;
+    background: rgba(58, 123, 213, 0.15);
+    border: 1px solid rgba(58, 123, 213, 0.3);
+    border-radius: 10px;
+    font-size: 0.95rem;
+    color: #b3d4fc;
+    transition: background 0.3s;
+}
+
+.instructions.success {
+    background: rgba(76, 175, 80, 0.15);
+    border-color: rgba(76, 175, 80, 0.3);
+    color: #a5d6a7;
+}
+
+/* ===== Grid ===== */
+.grid-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 24px;
+}
+
+.grid-container {
+    display: inline-grid;
+    gap: 3px;
+    padding: 10px;
+    background: rgba(255, 255, 255, 0.04);
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.grid-cell {
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.85rem;
+    font-weight: 600;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: transform 0.15s, background 0.25s, box-shadow 0.25s;
+    background: rgba(255, 255, 255, 0.07);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: #cfd8dc;
+    user-select: none;
+}
+
+.grid-cell:hover {
+    transform: scale(1.08);
+    box-shadow: 0 4px 14px rgba(0, 210, 255, 0.2);
+    background: rgba(255, 255, 255, 0.12);
+}
+
+.grid-cell.start {
+    background: linear-gradient(135deg, #2e7d32, #43a047) !important;
+    color: #fff !important;
+    border-color: #66bb6a;
+    box-shadow: 0 0 14px rgba(76, 175, 80, 0.4);
+}
+
+.grid-cell.end {
+    background: linear-gradient(135deg, #c62828, #e53935) !important;
+    color: #fff !important;
+    border-color: #ef5350;
+    box-shadow: 0 0 14px rgba(229, 57, 53, 0.4);
+}
+
+.grid-cell.obstacle {
+    background: rgba(120, 120, 120, 0.6) !important;
+    color: #999 !important;
+    border-color: rgba(150, 150, 150, 0.3);
+    cursor: default;
+}
+
+/* ===== Eval Button ===== */
+.eval-section {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+#btnEval {
+    padding: 14px 40px;
+    border: none;
+    border-radius: 12px;
+    font-size: 1.1rem;
+    font-weight: 700;
+    cursor: pointer;
+    background: linear-gradient(135deg, #f57c00, #ff9800);
+    color: #fff;
+    transition: transform 0.15s, box-shadow 0.3s;
+}
+
+#btnEval:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(255, 152, 0, 0.35);
+}
+
+#btnEval:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    transform: none;
+    box-shadow: none;
+}
+
+/* ===== Results ===== */
+.results-section {
+    margin-top: 10px;
+}
+
+.matrix-wrapper {
+    display: flex;
+    gap: 30px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.matrix-box {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 14px;
+    padding: 20px;
+    backdrop-filter: blur(10px);
+}
+
+.matrix-container {
+    display: inline-grid;
+    gap: 2px;
+}
+
+.matrix-cell {
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.8rem;
+    font-weight: 600;
+    border: 1px solid rgba(30, 136, 229, 0.4);
+    border-radius: 4px;
+    color: #e0e0e0;
+    background: rgba(255, 255, 255, 0.03);
+}
+
+.matrix-cell.m-start {
+    background: rgba(76, 175, 80, 0.35);
+}
+
+.matrix-cell.m-end {
+    background: rgba(229, 57, 53, 0.35);
+}
+
+.matrix-cell.m-obstacle {
+    background: rgba(120, 120, 120, 0.5);
+    color: #666;
+}
+
+.matrix-cell .arrow {
+    font-size: 1.4rem;
+}

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HW1: 網格地圖開發與策略評估</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>HW1: 網格地圖開發與策略評估 🤖</h1>
+
+        <!-- Grid Size Input -->
+        <div class="control-panel">
+            <label for="gridSize">輸入網格大小 N (5~9)：</label>
+            <input type="number" id="gridSize" min="5" max="9" value="5">
+            <button id="btnGenerate" onclick="generateGrid()">Generate Square</button>
+            <button id="btnReset" onclick="resetGrid()">🔄 重置地圖</button>
+        </div>
+
+        <!-- Instructions -->
+        <div id="instructions" class="instructions">
+            <p id="instructionText">請先輸入網格大小並點擊「Generate Square」。</p>
+        </div>
+
+        <!-- Interactive Grid -->
+        <div class="grid-section">
+            <h2 id="gridTitle" style="display:none;"></h2>
+            <div id="gridContainer" class="grid-container"></div>
+        </div>
+
+        <!-- Run Policy Evaluation Button -->
+        <div id="evalSection" style="display:none;" class="eval-section">
+            <button id="btnEval" onclick="runPolicyEvaluation()">🚀 執行策略評估</button>
+        </div>
+
+        <!-- Results -->
+        <div id="resultsSection" style="display:none;" class="results-section">
+            <div class="matrix-wrapper">
+                <div class="matrix-box">
+                    <h3>Value Matrix</h3>
+                    <div id="valueMatrix" class="matrix-container"></div>
+                </div>
+                <div class="matrix-box">
+                    <h3>Policy Matrix</h3>
+                    <div id="policyMatrix" class="matrix-container"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='app.js') }}"></script>
+</body>
+</html>
